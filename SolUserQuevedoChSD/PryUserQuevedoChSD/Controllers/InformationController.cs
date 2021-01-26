@@ -17,12 +17,14 @@ namespace PryUserQuevedoChSD.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Information
+        [Authorize]
         public IQueryable<Information> GetInformation()
         {
             return db.Information;
         }
 
         // GET: api/Information/5
+        [Authorize]
         [ResponseType(typeof(Information))]
         public IHttpActionResult GetInformation(int id)
         {
@@ -36,6 +38,7 @@ namespace PryUserQuevedoChSD.Controllers
         }
 
         // PUT: api/Information/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutInformation(int id, Information information)
         {
@@ -71,6 +74,7 @@ namespace PryUserQuevedoChSD.Controllers
         }
 
         // POST: api/Information
+        [Authorize]
         [ResponseType(typeof(Information))]
         public IHttpActionResult PostInformation(Information information)
         {
@@ -86,6 +90,7 @@ namespace PryUserQuevedoChSD.Controllers
         }
 
         // DELETE: api/Information/5
+        [Authorize]
         [ResponseType(typeof(Information))]
         public IHttpActionResult DeleteInformation(int id)
         {
