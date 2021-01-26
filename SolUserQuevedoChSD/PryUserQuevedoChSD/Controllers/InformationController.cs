@@ -44,7 +44,7 @@ namespace PryUserQuevedoChSD.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != information.ProductId)
+            if (id != information.PersonId)
             {
                 return BadRequest();
             }
@@ -82,7 +82,7 @@ namespace PryUserQuevedoChSD.Controllers
             db.Information.Add(information);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = information.ProductId }, information);
+            return CreatedAtRoute("DefaultApi", new { id = information.PersonId }, information);
         }
 
         // DELETE: api/Information/5
@@ -112,7 +112,7 @@ namespace PryUserQuevedoChSD.Controllers
 
         private bool InformationExists(int id)
         {
-            return db.Information.Count(e => e.ProductId == id) > 0;
+            return db.Information.Count(e => e.PersonId == id) > 0;
         }
     }
 }
